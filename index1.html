@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever Love ❤️</title>
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff4b72;
+            --secondary-color: #ff85a2;
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Background Hearts */
+        .bg-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-particle {
+            position: absolute;
+            color: rgba(255, 75, 114, 0.4);
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 550px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Heart Pulse Animation */
+        .main-heart {
+            font-size: 60px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #ff85a2;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 133, 162, 0.5);
+        }
+
+        p.letter {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Buttons Section */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            position: relative;
+            min-height: 60px;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff4b72, #ff85a2);
+            color: white;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(255, 75, 114, 0.6);
+        }
+
+        .btn-no {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            position: absolute;
+            transition: 0.2s ease;
+        }
+
+        /* Celebration Screen (Hidden by default) */
+        .celebration {
+            display: none;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .celebration h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ff4b72;
+            margin-bottom: 15px;
+        }
+
+        .celebration p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            p.letter { font-size: 0.95rem; }
+            .btn { padding: 10px 24px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Background Hearts -->
+    <div class="bg-hearts" id="bgHearts"></div>
+
+    <!-- Main Proposal Card -->
+    <div class="container" id="proposalCard">
+        <div class="main-heart">❤️</div>
+        <!-- Yahan aap unka naam likh sakte hain -->
+        <h1 id="title">My Dearest Love...</h1>
+        
+        <p class="letter">
+            Aapki muskurahat meri duniya roshan karti hai. Aap ke sath bitaya har lamha mere liye bohot khas hai. 
+            Main apni baaki poori zindagi aapke sath rehna chahta hoon, har khushi aur har gham share karna chahta hoon.
+            <br><br>
+            <strong>Will you walk with me forever and be mine? 🌹</strong>
+        </p>
+
+        <div class="btn-group">
+            <button class="btn btn-yes" onclick="acceptProposal()">YES! 💖</button>
+            <button class="btn btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No 🙈</button>
+        </div>
+    </div>
+
+    <!-- Celebration Card (Appears on YES) -->
+    <div class="container celebration" id="celebrationCard">
+        <div class="main-heart">💍💖✨</div>
+        <h2>You Made Me The Happiest Person!</h2>
+        <p>
+            Thank you for saying YES! I promise to cherish, love, and respect you for the rest of my life. 
+            <br><br>
+            <strong>Forever & Always! ❤️🥰</strong>
+        </p>
+    </div>
+
+    <script>
+        // 1. Floating Hearts Background Generator
+        function createHearts() {
+            const bgHearts = document.getElementById('bgHearts');
+            const heartIcons = ['❤️', '💖', '💕', '💗', '✨'];
+            
+            for (let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-particle');
+                heart.innerText = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+                
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                bgHearts.appendChild(heart);
+            }
+        }
+        createHearts();
+
+        // 2. Playful "No" Button (Dodge Effect)
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            // Randomly translate the button when hovered
+            const x = (Math.random() - 0.5) * 200;
+            const y = (Math.random() - 0.5) * 200;
+            
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        // 3. Accept Proposal Action
+        function acceptProposal() {
+            document.getElementById('proposalCard').style.display = 'none';
+            document.getElementById('celebrationCard').style.display = 'block';
+            
+            // Create extra fireworks floating hearts effect
+            for (let i = 0; i < 40; i++) {
+                setTimeout(createHearts, i * 50);
+            }
+        }
+    </script>
+</body>
+</html>
